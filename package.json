@@ -5,13 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "node --require ./setup-global.js src/index.js",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "format": "npm run prettier -- --write",
+    "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\"",
+    "validate": "npm run lint && npm run prettier -- --list-different"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^5.8.0",
-    "jest": "^23.6.0"
+    "eslint-config-prettier": "^3.1.0",
+    "jest": "^23.6.0",
+    "prettier": "^1.14.3"
   }
 }
