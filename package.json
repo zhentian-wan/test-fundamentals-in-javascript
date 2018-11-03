@@ -9,7 +9,7 @@
     "lint": "eslint src",
     "format": "npm run prettier -- --write",
     "prettier": "prettier \"**/*.+(js|jsx|json|yml|yaml|css|less|scss|ts|tsx|md|graphql|mdx)\"",
-    "validate": "npm run lint && npm run prettier -- --list-different",
+    "validate": "npm run lint && npm run prettier -- --list-different && npm run flow",
     "precommit": "npm run validate"
   },
   "keywords": [],

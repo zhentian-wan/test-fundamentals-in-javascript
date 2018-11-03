@@ -1,6 +1,6 @@
 //@flow
 
-function add(a: string, b: number): number {
+function add(a: number, b: number): number {
   return a + b;
 }
 type User = {
