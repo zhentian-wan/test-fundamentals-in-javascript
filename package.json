@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node --require ./setup-global.js src/index.js",
+    "test": "jest",
+    "test:dev": "jest --watch",
     "flow": "flow",
     "lint": "eslint src",
     "format": "npm run prettier -- --write",
