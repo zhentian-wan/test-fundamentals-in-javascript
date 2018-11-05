@@ -1,4 +1,4 @@
-const {sumAsync, subtractAsync} = require("./math");
+const {sumAsync, subtractAsync} = require("../math");
 
 let result, expected;
 

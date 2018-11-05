@@ -1,12 +1,14 @@
-const thumbWar = require("./thumbwar");
-const utils = require("./utils");
-const assert = require("assert");
+const thumbWar = require("../thumbwar");
+const utils = require("../utils");
+
+jest.mock("../utils");
 
 test("returns winner", () => {
   //const originalGetWinner = utils.getWinner;
   //utils.getWinner = jest.fn((p1, p2) => p1); // eslint-disable-line no-unused-vars
-  jest.spyOn(utils, "getWinner");
-  utils.getWinner.mockImplementation((p1, p2) => p1); // eslint-disable-line no-unused-vars
+
+  //jest.spyOn(utils, "getWinner");
+  //utils.getWinner.mockImplementation((p1, p2) => p1); // eslint-disable-line no-unused-vars
   const winner = thumbWar("KCD", "KW");
   expect(winner).toBe("KCD");
   expect(utils.getWinner.mock.calls).toEqual([["KCD", "KW"], ["KCD", "KW"]]);
@@ -15,9 +17,14 @@ test("returns winner", () => {
   expect(utils.getWinner).toHaveBeenNthCalledWith(2, "KCD", "KW");
 
   // utils.getWinner = originalGetWinner;
-  utils.getWinner.mockRestore();
+
+  //utils.getWinner.mockRestore();
+
+  utils.getWinner.mockReset();
 });
 
+/*
+const assert = require("assert");
 function fn(impl = () => {}) {
   const mockFn = (...args) => {
     mockFn.mock.calls.push(args);
@@ -48,3 +55,4 @@ test("returns winner: fn", () => {
   ]);
   utils.getWinner.mockRestore();
 });
+*/
